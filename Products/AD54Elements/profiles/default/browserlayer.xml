@@ -1,0 +1,4 @@
+<layers>
+    <layer name="Products.AD54Elements"
+        interface="Products.AD54Elements.interfaces.IAD54ElementsLayer" />
+</layers>

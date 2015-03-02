@@ -1,0 +1,33 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="plone">
+
+<genericsetup:upgradeStep
+	source="1"
+	destination="2"
+    profile="Products.AD54Elements:default"
+    title="Migrate from 2.0 to 2.1"
+    description="Run the import step which loads defaults for the configurable multi-search and delete the ad54elements_various import step"
+    handler="Products.AD54Elements.migrations.from_2_0_to_2_1"
+/>
+
+<genericsetup:upgradeStep
+	source="2"
+	destination="3"
+    profile="Products.AD54Elements:default"
+    title="Migrate from 2.1 to 2.2"
+    description="Run the import step which loads the css and javascript registry entries"
+    handler="Products.AD54Elements.migrations.from_2_1_to_2_2"
+/>
+
+<genericsetup:upgradeStep
+	source="3"
+	destination="4"
+    profile="Products.AD54Elements:default"
+    title="Migrate from 2.2 to 3.0"
+    description="Run the import step which loads the css and javascript registry entries"
+    handler="Products.AD54Elements.migrations.from_2_2_to_3_0"
+/>
+
+</configure>

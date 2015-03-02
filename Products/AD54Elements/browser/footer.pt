@@ -1,0 +1,51 @@
+<tal:comment condition="nothing">
+
+  I changed the footer to fall into AD-54 standards. It has:
+1) The privacy and legal statemets
+2) "Created by" script that is updated automatically when the person updates the page.
+3) "Last Modified" script which gets the date from the server automatically from the server and outputs it in month date, year format
+4) The copyright date which gets the date from the current calendar year
+5) In plones' rights management they wish you to have a link to Plone. So I put a "Powered by Plone" link there instead of the image. The image was too big.
+rhp110@psu.edu
+
+** Added webmaster contact information to footer. Reorganized footer and 
+eliminated reference and link to last editor. 
+{cjohansen@psu.edu} - 2005-09-08 
+</tal:comment>
+
+<div metal:define-macro="portal_footer"
+     i18n:domain="plone"
+     class="row">
+    <div class="cell width-full position-0">
+    <div id="portal-footer">
+        <p>Copyright &copy;<span tal:omit-tag="" tal:define="now modules/DateTime/DateTime" tal:content="now/year" />,
+    <a href="http://www.psu.edu/" title="Penn State home page.">The Pennsylvania State University</a> | 
+     
+
+    <span i18n:translate="description_copyright" tal:omit-tag="">
+    <a href="http://www.psu.edu/ur/legal.html" title="Official statements on privacy, nondiscrimination, equal opportunity and copyright.">Privacy and Legal Statements</a>
+    </span>
+    <br />
+
+<tal:comment tal:condition="nothing">If there is no webmaster email address don't show</tal:comment>
+   <span tal:define="mailt  context/email_from_address"
+             tal:condition="context/email_from_address">
+    Contact the <a tal:attributes="href string:mailto:${mailt}"  
+            title="Contact the web administrator" 
+            tal:content="context/email_from_name">webmaster</a> | 
+  </span>
+    
+        <span i18n:translate="box_last_modified">
+    Last modified
+    </span>
+    <span tal:replace="python:here.toLocalizedTime(here.ModificationDate(),long_format=0)">
+    August 
+    </span> | 
+
+    Powered by <a href="http://plone.org" 
+            title="Powered by Plone Content Management System">Plone</a></p>
+
+</div>
+</div>
+</div>
+

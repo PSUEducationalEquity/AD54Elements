@@ -1,0 +1,33 @@
+ <div id="portal-logo" tal:define="titlez string:${here/portal_url}/process-search;"
+                    tal:attributes="class string:position-0 width-13">
+  <div id="psu-icon">
+    <tal:comment tal:replace="nothing">This checks to see if there is a psulogo.png within the zope environment. If it does it grabs all the attributes. If it doesn't it just grabs the stock psulogo.png from the filesystem</tal:comment>
+    <tal:block tal:define="yourOwnLogo python:exists('context/psulogo.png')">
+        <tal:block tal:condition="yourOwnLogo">
+            <a href="http://www.psu.edu" title="Penn State">
+                <img tal:replace="structure context/psulogo.png" alt="Penn State" title="Penn State"/>
+            </a>
+        </tal:block>
+        <tal:block tal:condition="not: yourOwnLogo">
+            <a href="http://www.psu.edu" title="Penn State">
+                <img tal:attributes="src string:${context/@@plone_portal_state/navigation_root_url}/++resource++images/psulogo.png" alt="Penn State" title="Penn State"/>
+            </a>
+        </tal:block>
+    </tal:block>
+    </div>
+    <div id="unit-id">
+    <tal:comment tal:replace="nothing">This checks to see if there is a unitlogo.png within the zope environment. If it does it grabs all the attributes. If it doesn't it just grabs the Title from the website portal_setup</tal:comment>
+    <tal:block tal:define="yourOwnUnitLogo python:exists('context/unitlogo.png')">
+        <tal:block tal:condition="yourOwnUnitLogo">
+            <a metal:define-macro="portal_logo" id="unit-logo" accesskey="1" tal:attributes="href context/@@plone_portal_state/navigation_root_url" i18n:domain="plone">
+                <img src="logo.jpg" alt="" tal:replace="structure context/unitlogo.png/tag"/>
+            </a>
+        </tal:block>
+        <tal:block tal:condition="not: yourOwnUnitLogo">
+            <h2 tal:define="titlez here/portal_url/Title;" id="unit-logo">
+                <a href="" tal:attributes="href context/@@plone_portal_state/navigation_root_url" tal:content="titlez">The Title</a>
+            </h2>
+        </tal:block>
+    </tal:block>
+    </div>
+    </div>

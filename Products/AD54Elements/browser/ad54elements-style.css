@@ -1,0 +1,342 @@
+/* Font Stylesheet for AD54Elements */
+
+#portal-globalnav { clear: both;}
+#portal-logo {
+    display:block;
+    margin: 10px 0px 0px 10px;
+    /* to make sunburst and plone classic render the logo the same in IE 7 we had to do a IE 7 hack */
+    *position: absolute;
+    *margin-top: 0px !important;
+    *top: 0px;
+    *left: 0px;
+    display: block;
+}
+
+
+#portal-logo img {
+	margin:0 50px 0 10px;
+	*float: left;
+	*position: absolute;
+	*left: 10px;
+}
+
+/* changes made for the new search box 
+input#searchString */
+/* search form 
+-------------------------------------- */
+
+
+
+#portal-searchbox {
+    margin: 1.2em 0px 1.2em 0px;
+    width:174px;
+    float: right;
+    display: inline-block;
+    zoom: 1; /* ie7 hack for display:inline-block */
+    
+/*  ------   Search Box outline and background ----
+  ----  Comment out this section to remove the different box around search -----*/
+    border: solid 1px #999;
+    padding:.4em;
+    background: #f1f1f1;
+
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
+/* ---- End Search Box outline and background ----- */
+
+/*  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#C2C2CB));
+    background: -moz-linear-gradient(top,  #FFF,  #C2C2CB);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#C2C2CB');
+    -ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#C2C2CB');
+*/
+}
+
+#portal-searchbox.topborderradius {
+    -webkit-border-top-left-radius: 1em;
+    -webkit-border-top-right-radius: 1em;
+    -webkit-border-bottom-left-radius: 0em;
+    -webkit-border-bottom-right-radius: 0em;
+    -moz-border-radius-topleft: 1em;
+    -moz-border-radius-topright: 1em;
+    -moz-border-radius-bottomleft: 0em;
+    -moz-border-radius-bottomright: 0em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 0em;
+    border-bottom-right-radius: 0em;
+    background-color: #F0F0F0;
+}
+
+label.hiddenStructure { text-indent: -9999px; }
+label.obscure {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px); /* makes this accessible re:http://yaccessibilityblog.com/library/css-clip-hidden-content.html */
+    padding:0 !important;
+    border:0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+.searchform #searchString {
+    border: 1px solid #98989F;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    height:18px;
+    color:#555; 
+    width: 118px;
+    padding:0px 8px;
+    margin-left: 3px;
+    position:relative;
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.2);    
+}
+
+.searchform .searchbutton {
+    color: #fff;
+    border: 1px solid #494949;
+    padding:0 2px;
+    height:23px;
+    width:29px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.6);
+    -webkit-border-radius:1em;
+    -moz-border-radius:1em;
+    border-radius:1em;
+    background: #454545;
+    background: -webkit-gradient(linear, left top, left bottom, from(#9e9e9e), to(#454545));
+    background: -moz-linear-gradient(top,  #9e9e9e,  #454545);
+}
+
+/* menu */ 
+#menu{ 
+    margin:0px; 
+    padding:0px; 
+    list-style:none; 
+    color:#fff; 
+    display:inline-block; 
+    z-index:1000;
+     } 
+#menu a { 
+    color:#fff; 
+    text-decoration:none; } 
+#menu > li {
+    background:transparent none repeat scroll 0 0; 
+    cursor:pointer; 
+    float:left; 
+    position:relative; 
+    padding:0px;
+    width:100%;
+    } 
+#menu > li a:hover {
+    color:#B0D730;} 
+#menu .logo {background:transparent none repeat scroll 0% 0%; padding:0px; 
+    background-color:Transparent;} 
+/* sub-menus*/ 
+#menu ul { padding:0px; margin:0px; display:block; display:inline;} 
+#menu li ul { 
+    position:absolute; 
+    left:-0px; 
+    top:0px; 
+    margin:27px 0px 0px -6px;  
+    line-height:16px; 
+    font-size:10px;
+    background-color:#F0F0F0; 
+    text-align: left; 
+    color:#6E6E72; /* for IE */ 
+    color: #383838;
+    z-index: 1000;
+    border-left: 1px solid #98989F;
+    border-right: 1px solid #98989F;
+    border-bottom: 1px solid #98989F;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    outline: medium;
+    display:none;
+    width: 184px;
+    -moz-box-shadow: 5px 11px 12px #CCC;
+    -webkit-box-shadow: 5px 11px 12px #CCC;
+    box-shadow: 5px 11px 12px #CCC;
+} 
+
+#menu li ul#search.show {
+    display: block;
+}
+
+#menu li ul label span {
+    margin-left: 5px;
+  	font-weight:normal;
+    font-size:10px;
+	font-family: Arial,FreeSans,sans-serif;    
+}
+
+#menu li ul li{ display:block; margin:5px; padding: 5px 0px;  border-top: dotted 1px #606060; 
+    list-style-type:none; } 
+#menu li ul li:first-child { border-top: none; } 
+#menu li ul li a { display:block; color:#8B8B8B; } 
+#menu li ul li a:hover { color:#fff; } 
+/* main submenu */ 
+#menu #main { left:0px; top:-20px; padding-top:20px; background-color:#7cb7e3; color:#fff; 
+    z-index:999;} 
+
+#menu.show li:hover ul {
+  display: block;
+  }
+  
+#menu li:hover ul { 
+    display:none;
+    } 
+
+/* search */ 
+.searchContainer { 
+    width:100%;
+}
+li .searchContainer {
+    margin-bottom: 0;
+}
+.searchContainer div { background-color:transparent; display:inline; padding:0; width:100%;} 
+      
+button#pulldown.show, button#pullup.show {
+    float:left;
+    color: #fff;
+    border: solid 1px #494949;
+    padding:0px 5px;
+    height:23px;
+    width:29px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.6);
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
+    background: #454545;
+    background: -webkit-gradient(linear, left top, left bottom, from(#9e9e9e), to(#454545));
+    background: -moz-linear-gradient(top,  #9e9e9e,  #454545);
+    -ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie8 */
+    }
+
+button#pulldown.hide, button#pullup.hide {
+    display: none;
+    }
+    
+/* ---------  Plone search box ------------- */
+input.searchbutton {
+cursor: pointer; /* put a hand there when it is being hovered over. Not the normal action the but button looks like a image */
+}
+
+
+
+div#psu-icon {
+    float:left;
+    width: 116px;
+    height: 54px;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+}
+
+h2#unit-logo {
+    border-bottom: none;
+    font-size: 1em;
+    margin: 0px !important;
+    font-size: 1em;
+    line-height:inherit;
+}
+
+
+div#unit-id {
+    margin: 25px 0px 0px 125px;
+    }
+
+#unit-logo img { 
+    margin: 1em 0 0 2em;
+}
+
+#portal-searchbox {
+	*display: inline;
+}
+
+.searchform #searchString {
+	*position: static;
+}
+
+/*  * Phones * */
+@media screen and (max-width: 480px), (min-device-width : 320px)
+and (max-device-width : 480px)
+and (orientation:landscape) {
+    body { min-width: 320px; }
+    div#unit-id { margin: 15px 0px 0px 125px;}
+
+   #portal-logo {
+        display: inline-block !important;
+        position: absolute;
+        top: 15px !important;
+        left: 10px;
+        clear: both !important;
+        margin: 0;
+        width: 80% !important;
+       }
+            
+   #portal-logo img { 
+       max-width: 300% !important; 
+       height: auto; 
+       margin-top: 0px !important;
+       }
+       
+   div.row #portal-searchbox { 
+       margin: 160px auto 15px auto !important; 
+       width: 310px;
+       display: block !important;
+       float: none;
+       }
+        
+   .searchform #searchString { 
+       width: 211px !important; 
+       margin: 0 6px;
+       }  
+       
+   #menu li ul { 
+       width: 211px !important;
+       margin-left: 14px;
+       }
+       
+   button#pulldown.show, button#pullup.show, .searchform .searchbutton { 
+       width: 34px !important;
+       }
+} /* end 480px and below */
+
+@media screen and (max-width: 400px) {
+    div.row #portal-searchbox { 
+       margin: 193px auto 15px auto !important; 
+       }
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    #portal-logo { width: 100% !important;}
+    .searchform #searchString { 
+        padding: 8px 0px 8px 5px;
+        margin-top: 0px !important;
+        float: left;
+        }
+    button#pulldown.show, button#pullup.show, .searchform .searchbutton {
+        padding: 4px 10px  30px 10px !important;
+        font-size: 16px !important;
+        -webkit-border-radius: none !important;
+        border-radius: none !important;
+        clear: both;
+        }
+    .searchform .searchbutton { padding-right: 35px !important;}
+    
+    div.row #portal-searchbox { 
+       margin: 200px auto 15px auto !important; 
+       }
+    #menu li ul { margin-top: 31px !important; margin-left: 6px !important;}
+    #menu li ul label span { font-size: 0.9rem !important;}
+} /* end smartphones */

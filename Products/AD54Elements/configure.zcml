@@ -1,0 +1,99 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           i18n_domain="Products.AD54Elements">
+  
+  <!-- ensure plone.browserlayer is loaded -->
+  <include package="plone.browserlayer" />
+  <include file="profiles.zcml" />
+  <include file="upgrades.zcml" />
+
+<!-- Resource directory for images (psu logo) we need to be able to get to a
+     resource in the orthodox way. The image will replace logo.pt. -->
+  <browser:resourceDirectory
+    name="images" 
+    directory="browser/images" 
+    permission="zope2.View"
+    layer=".interfaces.IAD54ElementsLayer"
+    />
+        
+  <browser:resource
+    name="ad54elements-style.css"
+    file="browser/ad54elements-style.css" 
+    permission="zope2.View"
+    layer=".interfaces.IAD54ElementsLayer"
+    />
+    
+  <browser:resource
+    name="jquery.watermarkinput.js"
+    file="browser/jquery.watermarkinput.js" 
+    permission="zope2.View"
+    layer=".interfaces.IAD54ElementsLayer"
+    />
+    
+  <browser:resource
+    name="watermarksettings.js"
+    file="browser/watermarksettings.js" 
+    permission="zope2.View"
+    layer=".interfaces.IAD54ElementsLayer"
+    />
+
+  <browser:resource
+    name="searchpulldown.js"
+    file="browser/searchpulldown.js" 
+    permission="zope2.View"
+    layer=".interfaces.IAD54ElementsLayer"
+    />
+            
+  <browser:page
+    name="process-search"
+    for="Products.CMFCore.PortalObject.PortalObjectBase"
+    class=".browser.processsearch.ProcessSearch"
+    permission="zope.Public"
+    layer=".interfaces.IAD54ElementsLayer"
+    />
+    
+  <!-- Favicon -->
+  <browser:viewlet
+    name="plone.links.favicon"
+    manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+    class=".browser.viewlets.FaviconViewlet"
+    permission="zope2.View"
+    layer=".interfaces.IAD54ElementsLayer" 
+    />
+ 
+  <!-- Searchbox -->
+  <browser:viewlet
+    name="plone.searchbox"
+    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    class=".browser.viewlets.MultiSearchViewlet"
+    permission="zope.Public"
+    layer=".interfaces.IAD54ElementsLayer"
+    />
+        
+  <!-- Logo -->
+  <browser:viewlet
+    name="plone.logo"
+    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    class=".browser.viewlets.LogoViewlet"
+    permission="zope.Public"
+    layer=".interfaces.IAD54ElementsLayer"
+    />
+      
+  <!-- Footer --> 
+  <browser:viewlet
+    name="plone.footer"
+    manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+    class=".browser.viewlets.FooterViewlet"
+    permission="zope.Public"
+    layer=".interfaces.IAD54ElementsLayer"
+    />
+
+
+
+  <utility factory=".utilities.AD54NonInstallable" name="AD54Elements" />
+
+    
+</configure>
+
+

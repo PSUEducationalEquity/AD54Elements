@@ -1,0 +1,75 @@
+Changelog
+=========
+
+4.0 (2013-04-07)
+----------------
+* This version is focused on accessibility.  Due to the versions of jQuery needed, this version is for Plone 4.x+.  
+* The pull down button didn't work for the blind, so that has been taken away.  If you use a keyboard to get to the searchbox you can escape by using the esc key, tab, or space bar buttons.  The tab or space bar buttons will take you to a spot where you can type in your search query.  
+* Now if you click on the box you see the options and either choose and option or type in the box.  You can then also click outside of the pull down and it will go away.
+
+3.2 (2012-03-08)
+----------------
+* IE7 fix for portal-logo
+
+3.1 (2012-02-03)
+----------------
+* Hide AD54Elements non-install profiles from the installation menus
+* Fixed duplicate ids in logo.pt
+* Accessibility fixes for the search box
+* Cross-browser compatibility adjustments to CSS
+* Positioning of unit-id below the PSU mark line in Plone 3
+* Cleaned up unnecessary imports
+* FaviconViewlet now uses the base FaviconViewlet class from plone.app.layout
+
+3.0 (2011-08-10)
+----------------
+* Improved search element (now with the ability to use javascript, just css, or just text for lynx type browsers)
+* Registers new javascript upon install or upgrade
+* Adds a favicon and a icon for the apple devices if they are bookmarked. Both PSU shields
+* Makes ad54elements compatible with plonetheme.responsivetheme
+
+2.2 (2011-02-18)
+----------------
+* Improved search element (now with accessibility)
+* Registers javascript and css upon install or upgrade
+* Overrides colophon viewlet
+* Many template improvements
+* xmltidy cleanup for Chameleon compatibility. [esteele]
+
+2.1 (2010-06-23)
+----------------
+* Explicitly call in the viewlet templates from the class (instead of ZCML) so the viewlets can be moved to other managers without full template paths.
+* Fix for Plone 3.3 plone.theme bug which causes the browserlayer to vanish in the presence of some custom themes.
+* The multi-search box is now configurable through portal_properties in the ZMI.
+* Removed several unused files.
+* Added an upgrade step for upgrading from 2.0 to 2.1 on Plone 3.3 and newer.
+* Added "once" GS profile to load default portal_properties page and import step to run it only once.
+* Updated uninstall() to clean up import steps.
+* Refactored the ZCML a bit.
+
+2.0 (2009-09-24)
+----------------
+* Eggified product as Products.AD54Elements
+* Added support for installing to specific plone sites by registering viewlets to a browser layer
+* Removed extraneous IprocessPSUsearch
+
+1.4 (2009-09-24)
+----------------
+* "PSU" replaced with "Penn State"
+
+1.3 (2009-08-07)
+----------------
+* Removed (unnecessary) install profile
+
+1.2 (2009-08-07)
+----------------
+* Same as 1.3
+
+1.1 (2008-08-08)
+----------------
+* First release
+
+1.0 (Never Released)
+--------------------
+* Generated skeleton product from DIYPloneStyle 3.0
+

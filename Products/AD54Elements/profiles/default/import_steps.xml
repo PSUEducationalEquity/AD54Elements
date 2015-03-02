@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<import-steps>
+  <import-step id="ad54elements_loaddefaults"
+               version="20091002-01"
+               handler="Products.AD54Elements.setuphandlers.importDefaults"
+               title="Import step for Products.AD54Elements to load defaults">
+    <dependency step="catalog" />
+    Loads defaults for Products.AD54Elements, if necessary.
+  </import-step>
+</import-steps>
+
