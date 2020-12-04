@@ -27,7 +27,12 @@ jQuery(document).ready(function($) {
     function close_searchbox() {
         $('ul#search').removeClass('show');
         $('#portal-searchbox').removeClass('topborderradius');
-        $('ul#search li label input').blur();
+        if ($(':focus').closest('ul.ad54-search-menu').length) {
+            // focus was in the search menu, refocus to the search input
+            $('input#searchString').select();
+        } else {
+            $('ul#search li label input').blur();
+        }
         // rebind so the box can re-open
         $('input#searchString').on('focus.searchstring', input_searchstring_focus);
     }
