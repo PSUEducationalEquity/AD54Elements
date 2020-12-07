@@ -9,6 +9,8 @@ jQuery(document).ready(function($) {
         $('input#searchString').off('focus.searchstring');
         // allows the user to arrow through the options
         $('ul#search.show li label input:checked').focus();
+        // bind the blur event AFTER setting the focus
+        $('input#searchString').on('blur', close_searchbox);
     }
 
     function clear_searchString() {
@@ -25,6 +27,7 @@ jQuery(document).ready(function($) {
     }
 
     function close_searchbox() {
+        $('input#searchString').off('blur', close_searchbox);
         $('ul#search').removeClass('show');
         $('#portal-searchbox').removeClass('topborderradius');
         if ($(':focus').closest('ul.ad54-search-menu').length) {
@@ -99,11 +102,6 @@ jQuery(document).ready(function($) {
      * this is the initial binding
      */
     $('input#searchString').on('focus.searchstring', input_searchstring_focus);
-
-    /**
-     * EVENT: search input looses the focus
-     */
-    $('input#searchString').on('blur', close_searchbox);
 
     /**
      * EVENT: clicking the search input opens the search menu
