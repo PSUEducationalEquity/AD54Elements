@@ -6,7 +6,7 @@ _defaultSearch = 'search?SearchableText=%s'
 
 class ProcessSearch(BrowserView):
     """I need to put a doctest in here sometime soon."""
-    
+
     def __call__(self):
         """"""
         ad54_props = getToolByName(getToolByName(self.context, 'portal_properties'), 'ad54elements_properties')
