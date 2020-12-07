@@ -101,6 +101,11 @@ jQuery(document).ready(function($) {
     $('input#searchString').on('focus.searchstring', input_searchstring_focus);
 
     /**
+     * EVENT: search input looses the focus
+     */
+    $('input#searchString').on('blur', close_searchbox);
+
+    /**
      * EVENT: clicking the search input opens the search menu
      */
     $('input#searchString').on('click', click_open_search_options);
